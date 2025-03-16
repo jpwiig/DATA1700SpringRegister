@@ -25,8 +25,8 @@ public class ItemController {
     // A method just to load sample items:
     @GetMapping("/loadSampleItems")
     public void loadItems() {
-        AllItems.add(new Item(1, "fishsauce", "sauce from fish", "2011-12-12"));
-        AllItems.add(new Item(2, "Lighter fluid", "fluid for my favorit green lighter", "2025-13-10"));
+        AllItems.add(new Item(1, "fishsauce",81, "sauce from fish", "2011-12-12"));
+        AllItems.add(new Item(2, "Lighter fluid",33, "fluid for my favorit green lighter", "2025-13-10"));
         System.out.println("All items added!");
     }
 
@@ -36,7 +36,10 @@ public class ItemController {
     }
     @PostMapping("/addItem")
     public void addAnItem(Item item){
+        System.out.println(item.nameOfItem);
         item.setItemNumber(incrementing());
+        AllItems.add(item);
+        System.out.println("Item added!");
         //here we vill add the final thing
 
     }

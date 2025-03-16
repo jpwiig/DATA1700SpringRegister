@@ -1,12 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("ready")
     console.log(getCurrentTime())
-    fetch("api/v1/items/loadSampleItems", {method: "GET"}).then(() => console.log("ITEMS FETCHED"))
+  if (localStorage.getItem("hasCodeRunBefore") === null ) {
+      fetch("api/v1/items/loadSampleItems", {method: "GET"}).then(() => console.log("ITEMS FETCHED"))
+      localStorage.setItem("hasCodeRunBefore", true)
+  }
 
     getThings()
 
+    /*let item = {
+        nameOfItem: document.getElementById("itemName").val,
+        description: document.getElementById("description").val,
+        numberOfItems : document.getElementById("numberOfItems").val,
+        timestamp: getCurrentTime().val,
+        userCreated: document.getElementById("owner").val
+    }*/
 
 
+    //submitting to the form
+document.getElementById("btn-submit").addEventListener("click", () => {
+    addItems(item)
+})
 })
 
 async function getThings() {
@@ -18,12 +32,13 @@ async function getThings() {
     ).then(data => displayItems(data))
 }
 
-async function addItem(item) {
+async function addItems(item) {
+    console.log(item)
     await fetch("api/v1/items/addItem", {
-            method: 'POST',
+            method: "POST",
             body: item
         },
-    ).then(res => console.log(res))
+    ).then(res => console.log(res.json())).then(data => getThings())
 }
 
 function getCurrentTime() {
@@ -31,7 +46,7 @@ function getCurrentTime() {
 }
 
 function displayItems(items) {
-    console.log(items)
+    let out =""
     out = "<table class='table'><tr><th>Name</th><th>No. of items</th><th>Description</th><th>Time created</th></tr>"
     for (let i of items) {
         out += "<tr><td>" + i.itemNumber + "</td><td>" + i.nameOfItem + "</td><td>" + i.description + "</td><td>" + i.timeStamp + "</td> </tr>"
