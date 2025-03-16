@@ -8,18 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     getThings()
 
-    /*let item = {
-        nameOfItem: document.getElementById("itemName").val,
-        description: document.getElementById("description").val,
-        numberOfItems : document.getElementById("numberOfItems").val,
-        timestamp: getCurrentTime().val,
-        userCreated: document.getElementById("owner").val
-    }*/
 
 
     //submitting to the form
-document.getElementById("btn-submit").addEventListener("click", () => {
-    addItems(item)
+document.getElementById("btn-submit").addEventListener("click", event => {
+    const  formdata = new FormData(document.getElementById("AddForm"))
+  console.log("hellwo")
+    addItems(formdata)
 })
 })
 
@@ -34,11 +29,15 @@ async function getThings() {
 
 async function addItems(item) {
     console.log(item)
+
     await fetch("api/v1/items/addItem", {
             method: "POST",
             body: item
         },
-    ).then(res => console.log(res.json())).then(data => getThings())
+    ).then(res => console.log(res.json())).then(data => {
+       console.log("data")
+        getThings()
+    }).catch(error => console.log(error))
 }
 
 function getCurrentTime() {

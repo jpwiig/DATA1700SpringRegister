@@ -1,10 +1,7 @@
 package org.oslomet.data1700springregister.Controller;
 
 import org.oslomet.data1700springregister.POJO.Item;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -25,8 +22,8 @@ public class ItemController {
     // A method just to load sample items:
     @GetMapping("/loadSampleItems")
     public void loadItems() {
-        AllItems.add(new Item(1, "fishsauce",81, "sauce from fish", "2011-12-12"));
-        AllItems.add(new Item(2, "Lighter fluid",33, "fluid for my favorit green lighter", "2025-13-10"));
+        AllItems.add(new Item(1, "fishsauce","81", "sauce from fish", "2011-12-12"));
+        AllItems.add(new Item(2, "Lighter fluid","33", "fluid for my favorit green lighter", "2025-13-10"));
         System.out.println("All items added!");
     }
 
@@ -35,7 +32,7 @@ public class ItemController {
         return AllItems;
     }
     @PostMapping("/addItem")
-    public void addAnItem(Item item){
+    public void addAnItem(@RequestBody Item item){
         System.out.println(item.nameOfItem);
         item.setItemNumber(incrementing());
         AllItems.add(item);
