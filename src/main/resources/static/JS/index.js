@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     getThings()
 
+
+
 })
 
 async function getThings() {
@@ -14,6 +16,14 @@ async function getThings() {
         //console.log(response.json())
         response.json()
     ).then(data => displayItems(data))
+}
+
+async function addItem(item) {
+    await fetch("api/v1/items/addItem", {
+            method: 'POST',
+            body: item
+        },
+    ).then(res => console.log(res))
 }
 
 function getCurrentTime() {

@@ -35,8 +35,10 @@ public class ItemController {
         return AllItems;
     }
     @PostMapping("/addItem")
-    public boolean addAnItem(){
-        return true;
+    public void addAnItem(Item item){
+        item.setItemNumber(incrementing());
+        //here we vill add the final thing
+
     }
     //helping functions
     public int incrementing(){
