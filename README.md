@@ -11,17 +11,17 @@ Du trykkker på "fork",da får du en kopi på din github profil, du kan også la
 ### Første pulje: 
 
 - Legge til logikk for å hente fra backend til frontend og vise hva som er i registeret
-- Registere ting til riktig person i registeret
 - Slette riktig ting fra registeret
+- logging hvis tiden lar oss gjøre det
 
 #### Eventuelt (Du kan gjøre dette selv)
 - sortere med bruk av java collections
 - sjekk om det er duplikater i listen med java
 
 ### Andre pulje
+- legge til brukerstøtte
 - koble til en relasjonsdatabase
 - Dele koden opp i repository og controller
-- Enkel og trygg brukerregistering (**Her går vi litt utenfor pensum kanskje og bruker noe som heter [JWT](https://auth0.com/docs/secure/tokens/json-web-tokens) og [OAUTH2](https://auth0.com/intro-to-iam/what-is-oauth-2), eller noe helt annet ;)**)
 - hvorfor man skal kryptere ting
 ### Tredje pulje
 - det vi ikke rekker fra andre, og kanskje andre ting

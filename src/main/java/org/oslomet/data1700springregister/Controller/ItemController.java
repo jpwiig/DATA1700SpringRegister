@@ -2,6 +2,7 @@ package org.oslomet.data1700springregister.Controller;
 
 import org.oslomet.data1700springregister.POJO.Item;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,13 +26,17 @@ public class ItemController {
     @GetMapping("/loadSampleItems")
     public void loadItems() {
         AllItems.add(new Item(1, "fishsauce", "sauce from fish", "2011-12-12"));
-        AllItems.add(new Item(2, "Lighter fluid", "fluid for my favorit green lighter", LocalDateTime.now().toString()));
+        AllItems.add(new Item(2, "Lighter fluid", "fluid for my favorit green lighter", "2025-13-10"));
         System.out.println("All items added!");
     }
 
     @GetMapping("/getItems")
     public List<Item> AllItems() {
         return AllItems;
+    }
+    @PostMapping("/addItem")
+    public boolean addAnItem(){
+        return true;
     }
     //helping functions
     public int incrementing(){
