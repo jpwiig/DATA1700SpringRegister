@@ -3,7 +3,16 @@
 Dette prosjektet kan fungere på mange måter. Det første denne blir er at vi går gjennom uke for uke i sporadiske mellomrom med temaer som er relevant for eksamen gjennom denne demoen. I første omgang virker den kanskje latterlig enkel, men mer kompleksistet blir lagt til dersom det er nødvendig. Under kommer en liten smørbrødsliste over ting som kommer til å være i prosjektet. Føl deg fri til å leke, legge til og ha det gøy i din egen fork så mye du vil for å bli ekstra klar til eksamen!
 
 ![Incredible register!](imgREADME/fantasticregister.webp)
+## Tekniske detaljer
 
+
+| java versjon        | 21    |
+|---------------------|-------|
+| Spring boot versjon | 3.4   |
+| Byggesystem         | Maven |
+
+| Ser du feil?| lag en issue [her](https://github.com/jpwiig/DATA1700SpringRegister/issues) |
+|-------------|----------------------|
 ## Hvordan kan jeg jobbe med min egen kopi?
 Du trykkker på "fork",da får du en kopi på din github profil, du kan også laste ned som zip
 ## Ting som skal bli gjort i prosjektet
@@ -23,6 +32,11 @@ Du trykkker på "fork",da får du en kopi på din github profil, du kan også la
 - koble til en relasjonsdatabase
 - Dele koden opp i repository og controller
 - hvorfor man skal kryptere ting
+
+
+#### Bonus: 
+- Er det andre måter du kan autentisere brukere på, det er ett kjent utsagn innenfor sikker utvikling, du kan ikke autentisere bedre selv?
+- Hva er det egentlig cookies samler om deg, og hvordan kan man bruke cookies så anonymt som mulig?
 ### Tredje pulje
 - det vi ikke rekker fra andre, og kanskje andre ting
 
