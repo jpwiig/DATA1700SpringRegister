@@ -10,6 +10,7 @@ Dette prosjektet kan fungere på mange måter. Det første denne blir er at vi g
 |---------------------|-------|
 | Spring boot versjon | 3.4   |
 | Byggesystem         | Maven |
+|oversikt over det som blir gjort i demoer| [trykk her](demoer.md)
 
 | Ser du feil?| lag en issue [her](https://github.com/jpwiig/DATA1700SpringRegister/issues) |
 |-------------|----------------------|
@@ -37,32 +38,6 @@ Du trykkker på "fork",da får du en kopi på din github profil, du kan også la
 1) Lag ett innloggingssystem, prototyp først uten kryptering også bruker du kryptering
 2) Ta i bruk sesjoner for å registere om brukeren din er ligget inn eller ikke
 3) _BONUS: Prøv forskjellige krypteringsalgoritmer, er det noen som du tror er mer sikkert enn andre: du kan se forskjellige krypteringsalgoritmer [her](https://www.geeksforgeeks.org/encryption-its-algorithms-and-its-future/)_
-
-
-## Ting som skal bli gjort i prosjektet gjennom demoer
-
-### Første pulje: 
-
-- Legge til logikk for å hente fra backend til frontend og vise hva som er i registeret
-- Slette riktig ting fra registeret
-- logging hvis tiden lar oss gjøre det
-- sjekk om det er duplikater i listen med java
-#### Eventuelt (Du kan gjøre dette selv)
-- sortere med bruk av java collections
-
-
-### Andre pulje
-- legge til brukerstøtte
-- koble til en relasjonsdatabase
-- Dele koden opp i repository og controller
-- hvorfor man skal kryptere ting
-
-
-#### Bonus: 
-- Er det andre måter du kan autentisere brukere på, det er ett kjent utsagn innenfor sikker utvikling, du kan ikke autentisere bedre selv?
-- Hva er det egentlig cookies samler om deg, og hvordan kan man bruke cookies så anonymt som mulig?
-### Tredje pulje
-- det vi ikke rekker fra andre, og kanskje andre ting
 
 
 ## Verktøy som er nytting når man jobber med APIer
