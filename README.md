@@ -15,17 +15,41 @@ Dette prosjektet kan fungere på mange måter. Det første denne blir er at vi g
 |-------------|----------------------|
 ## Hvordan kan jeg jobbe med min egen kopi?
 Du trykkker på "fork",da får du en kopi på din github profil, du kan også laste ned som zip
-## Ting som skal bli gjort i prosjektet
+
+
+## Oppgaver som du skal gjøre: 
+
+
+### Generelt backend programmering
+1) Lagre dataen fra skjemaet på server siden, tenk spesielt over hvilken http respons dette skal være, bruk jquery eller vanilla JS, men vær konsistent. 
+2) Oppdater en allerede eksisterende ting som er i registeret, husk riktig http respons! 
+3) Sletting av registeret ditt: legg inn mulighet for å slette hele, og slette en av tingnene i lista. Ha bekreftelse før det blir slettet fra backenden, rikitg http respons gjelder fremdeles.
+
+### Genereisk og collections
+1) Legg til muligheten for å sortere på hver av attributtene på tabellen.
+2) Legg inn sortering av lista di, bruk collections
+
+### Databaser
+1) Ta i bruk postgres til å gjøre lagring av listen din konsistent
+2) Sørg for at CRUD (Create, Read, Update,Delete) operatsjonene er konsist
+
+### Sikkerhet og brukerbehandling
+1) Lag ett innloggingssystem, prototyp først uten kryptering også bruker du kryptering
+2) Ta i bruk sesjoner for å registere om brukeren din er ligget inn eller ikke
+3) _BONUS: Prøv forskjellige krypteringsalgoritmer, er det noen som du tror er mer sikkert enn andre: du kan se forskjellige krypteringsalgoritmer [her](https://www.geeksforgeeks.org/encryption-its-algorithms-and-its-future/)_
+
+
+## Ting som skal bli gjort i prosjektet gjennom demoer
 
 ### Første pulje: 
 
 - Legge til logikk for å hente fra backend til frontend og vise hva som er i registeret
 - Slette riktig ting fra registeret
 - logging hvis tiden lar oss gjøre det
-
+- sjekk om det er duplikater i listen med java
 #### Eventuelt (Du kan gjøre dette selv)
 - sortere med bruk av java collections
-- sjekk om det er duplikater i listen med java
+
 
 ### Andre pulje
 - legge til brukerstøtte
