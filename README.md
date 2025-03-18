@@ -29,8 +29,9 @@ Det er lagt inn noen feller som man må løse i html siden også før alt funger
 3) Sletting av registeret ditt: legg inn mulighet for å slette hele, og slette en av tingnene i lista. Ha bekreftelse før det blir slettet fra backenden, rikitg http respons gjelder fremdeles.
 
 ### Genereisk og collections
-1) Legg til muligheten for å sortere på hver av attributtene på tabellen.
-2) Legg inn sortering av lista di, bruk collections
+1) Legg inn sortering av lista di, bruk collections
+2) Legg til muligheten for å sortere på hver av attributtene på tabellen.
+
 
 ### Databaser
 **NB: Husk å legg inn riktig biblotek i pom.xml filen for å få dabaser til å fungere**
