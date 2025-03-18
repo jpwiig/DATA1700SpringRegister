@@ -1,10 +1,7 @@
 package org.oslomet.data1700springregister.Controller;
 
 import org.oslomet.data1700springregister.POJO.Item;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -35,7 +32,7 @@ public class ItemController {
         return AllItems;
     }
     @PostMapping("/addItem")
-    public void addAnItem(Item item){
+    public void addAnItem(@RequestBody Item item){
         item.setItemNumber(incrementing());
         //here we vill add the final thing
 
