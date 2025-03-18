@@ -1,5 +1,6 @@
 package org.oslomet.data1700springregister;
 
+import org.oslomet.data1700springregister.Controller.ItemController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
