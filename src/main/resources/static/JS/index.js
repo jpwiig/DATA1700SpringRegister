@@ -19,7 +19,7 @@ async function getThings() {
 }
 
 async function addItem(item) {
-    await fetch("api/v1/items/addItem", {
+    await fetch("api/v1/items/addItem", { //you can adjust this as it fits
             method: 'POST',
             body: item
         },

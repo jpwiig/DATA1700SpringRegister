@@ -35,8 +35,9 @@ Det er lagt inn noen feller som man må løse i html siden også før alt funger
 
 ### Databaser
 **NB: Husk å legg inn riktig biblotek i pom.xml filen for å få dabaser til å fungere**
+**NNB: Husk også å oppdater applications.properties**
 1) Ta i bruk postgres til å gjøre lagring av listen din konsistent
-2) Sørg for at CRUD (Create, Read, Update,Delete) operatsjonene er konsist
+2) Sørg for at CRUD (Create, Read, Update,Delete) operatsjonene er konsist og fungerer med databasen din
 
 ### Sikkerhet og brukerbehandling
 **Husk å ha riktig rammeverk her også**
@@ -47,6 +48,6 @@ Det er lagt inn noen feller som man må løse i html siden også før alt funger
 
 ## Verktøy som er nytting når man jobber med APIer
 - [curl](https://curl.se/) - kommandlinje verktøy for å hente data fra api-er
-- [hoppscotch](https://hoppscotch.io/) - api verktøy som kan skrive tester, og ha en mer "visuell visning" av hva API-en leverer
+- [hoppscotch](https://hoppscotch.io/) - api verktøy som kan skrive tester, og ha en mer "visuell visning" av hva API-en leverer, for å få den til å fungere med localhost, se [her](https://github.com/hoppscotch/hoppscotch/discussions/2051), eller bruk noe som [ngrok](https://ngrok.com/)
 - [JWT.io](https://jwt.io/) - dekoding av JWT tokens
 - [maven central repository](https://mvnrepository.com/repos/central) - hvor man kan finne dependencies i maven sitt hovedrepository
