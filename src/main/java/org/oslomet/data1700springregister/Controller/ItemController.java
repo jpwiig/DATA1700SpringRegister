@@ -36,6 +36,7 @@ public class ItemController {
     public void addAnItem(@RequestBody Item item){
         System.out.println(item.nameOfItem);
         item.setItemNumber(incrementing());
+        item.setTimeStamp(LocalDateTime.now().toString());
         AllItems.add(item);
         System.out.println("Item added!");
         //here we vill add the final thing

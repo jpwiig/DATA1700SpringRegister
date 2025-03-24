@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-
+@Setter
 public class Item {
     public int itemNumber; //incrementing
     public String nameOfItem;
@@ -21,7 +21,7 @@ public class Item {
         this.nameOfItem = nameOfItem;
         this.numberOfItems = numberOfItems;
         this.description = description;
-       this.timeStamp = LocalDateTime.now().toString();
+       this.timeStamp = timeNow();
        this.userCreated = userCreated;
     }
 
@@ -31,4 +31,9 @@ public class Item {
     public void setItemNumber(int itemNumber) {
         this.itemNumber = itemNumber;
     }
+    private String timeNow(){
+        LocalDateTime now = LocalDateTime.now();
+        return now.toString();
+    }
+
 }
