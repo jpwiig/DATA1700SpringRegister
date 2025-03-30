@@ -42,6 +42,12 @@ public class ItemController {
         //here we vill add the final thing
 
     }
+
+    @DeleteMapping("/deleteAll")
+    public void deleteAll(){
+        AllItems.clear();
+    }
+
     //helping functions
     public int incrementing(){
         return AllItems.size() + 1;

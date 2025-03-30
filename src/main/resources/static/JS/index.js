@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("hellwo")
         addItems()
     })
+    document.getElementById("btn-delete-all").addEventListener("click", ()=> {
+        deleteAll()
+    })
 })
 
 async function getThings() {
@@ -55,12 +58,14 @@ async function addItems() {
 function getCurrentTime() {
     return Intl.DateTimeFormat("no-NO").format(Date.now())
 }
-
+async function deleteAll(){
+    await fetch('api/v1/items/deleteAll', {method: 'DELETE'}).then(alert("DELETED"))
+}
 function displayItems(items) {
     let out = ""
     out = "<table class='table table-striped'><tr><th>Item Number</th><th>Name</th><th>No. of items</th><th>Description</th><th>Author</th>><th>Time created</th></tr>"
     for (let i of items) {
-        out += "<tr><td>" +i.itemNumber+"</td><td>"+ i.nameOfItem+ "</td><td>" + i.numberOfItems + "</td><td>" + i.description + "</td><td>" +i.userCreated+"</td><td>"+ i.timeStamp + "</td> </tr>"
+        out += "<tr><td>" +i.itemNumber+"</td><td>"+ i.nameOfItem+ "</td><td>" + i.numberOfItems + "</td><td>" + i.description + "</td><td>" +i.userCreated+"</td><td>"+ i.timeStamp + "</td>" +"<td>aa </td> </td>"+"</tr>"
     }
     out += "</table>"
 
