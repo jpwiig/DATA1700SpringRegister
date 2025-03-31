@@ -1,17 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("ready")
     console.log(getCurrentTime())
-    /*   if (localStorage.getItem("hasCodeRunBefore") === null) {
-           fetch("api/v1/items/loadSampleItems", {method: "GET"}).then(() => console.log("ITEMS FETCHED"))
-           localStorage.setItem("hasCodeRunBefore", true)
-       }*/
-
     getThings()
 
 
     //submitting to the form
     document.getElementById("btn-submit").addEventListener("click", event => {
-        console.log("hellwo")
+        console.log("hello")
         addItems()
     })
     document.getElementById("btn-delete-all").addEventListener("click", () => {
@@ -21,12 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 async function getThings() {
-    await fetch("api/v1/items/getItems", {
-        method: "GET"
-    }).then(response =>
-        //console.log(response.json())
-        response.json()
-    ).then(data => displayItems(data))
+displayItems()
 }
 
 let items;
@@ -40,20 +30,6 @@ async function addItems() {
     }
     console.log(items)
 
-    await fetch('api/v1/items/addItems', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                nameOfItem: items.nameOfItem,
-                numberOfItems: items.numberOfitems,
-                description: items.description,
-                userCreated: items.userCreated
-            })
-        },
-    ).then(res => console.log(res.json())).then(data => {
-        console.log("data")
-        getThings()
-    }).catch(error => console.log(error))
 }
 
 function getCurrentTime() {
@@ -61,7 +37,7 @@ function getCurrentTime() {
 }
 
 async function deleteAll() {
-    await fetch('api/v1/items/deleteAll', {method: 'DELETE'}).then(alert("DELETED"))
+
 }
 
 /*async function deleteOneItem(itemNumber) {

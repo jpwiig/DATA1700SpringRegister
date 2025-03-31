@@ -12,8 +12,8 @@ import java.util.List;
 @RequestMapping("api/v1/items") //every call to api needs to start with this
 public class ItemController {
 
-    //List with items as DB for now ;)
-    public List<Item> AllItems = new ArrayList<>();
+    //List with all the Items
+
 
     @GetMapping("/hello")
     public String helloItems() {
@@ -23,37 +23,36 @@ public class ItemController {
     // A method just to load sample items:
   @PostConstruct //to load sampledata
     public void loadItems() {
-        AllItems.add(new Item(1, "fishsauce",81, "sauce from fish","me"));
-        AllItems.add(new Item(2, "Lighter fluid",33, "fluid for my favorit green lighter","me"));
+        Item item1 = new Item(1, "fishsauce",81, "sauce from fish","me");
+        Item item2 = new Item(2, "Lighter fluid",33, "fluid for my favorit green lighter","me");
         System.out.println("All items added!");
     }
 
+    //to display all the items
     @GetMapping("/getItems")
     public List<Item> AllItems() {
-        return AllItems;
+    return;
     }
+    //add a new item
     @PostMapping("/addItems")
     public void addAnItem(@RequestBody Item item){
         System.out.println(item.nameOfItem);
-        item.setItemNumber(incrementing());
-        item.setTimeStamp(LocalDateTime.now().toString());
-        AllItems.add(item);
-        System.out.println("Item added!");
         //here we vill add the final thing
 
     }
 
+    //to delete all Items
     @DeleteMapping("/deleteAll")
     public void deleteAll(){
-        AllItems.clear();
-    }
-    @DeleteMapping("/deleteOneItem")
-    public void deleteOneItem(@RequestBody Item item){
-        System.out.println(item);
-        AllItems.remove(item.itemNumber);
 
     }
-    //helping functions
+    //this one will one be coded live
+    @DeleteMapping("/deleteOneItem")
+    public void deleteOneItem(@RequestBody Item item){
+
+    }
+
+    //helping functions to increment
     public int incrementing(){
         return AllItems.size() + 1;
     }
