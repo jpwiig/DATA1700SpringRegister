@@ -1,11 +1,15 @@
 ## Ting som skal bli gjort i prosjektet gjennom demoer
 
-### Første pulje:
+### Første pulje (første demo):
 
 - Legge til logikk for å hente fra backend til frontend og vise hva som er i registeret
-- Slette riktig ting fra registeret
+- Slette hele registeret
+- legge til nye ting
+- morroheter med timestamp
+- bruk av liste for å lagre tingene
+- vise fram til debugging verktøy (hoppscotch)
+- Gå sakte men sikkert gjennom hva som må bli gjort
 - logging hvis tiden lar oss gjøre det
-- sjekk om det er duplikater i listen med java
 #### Eventuelt (Du kan gjøre dette selv)
 - sortere med bruk av java collections
 
