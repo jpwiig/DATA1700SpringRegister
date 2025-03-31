@@ -47,7 +47,12 @@ public class ItemController {
     public void deleteAll(){
         AllItems.clear();
     }
+    @DeleteMapping("/deleteOneItem")
+    public void deleteOneItem(@RequestBody Item item){
+        System.out.println(item);
+        AllItems.remove(item.itemNumber);
 
+    }
     //helping functions
     public int incrementing(){
         return AllItems.size() + 1;

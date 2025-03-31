@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("ready")
     console.log(getCurrentTime())
- /*   if (localStorage.getItem("hasCodeRunBefore") === null) {
-        fetch("api/v1/items/loadSampleItems", {method: "GET"}).then(() => console.log("ITEMS FETCHED"))
-        localStorage.setItem("hasCodeRunBefore", true)
-    }*/
+    /*   if (localStorage.getItem("hasCodeRunBefore") === null) {
+           fetch("api/v1/items/loadSampleItems", {method: "GET"}).then(() => console.log("ITEMS FETCHED"))
+           localStorage.setItem("hasCodeRunBefore", true)
+       }*/
 
     getThings()
 
@@ -14,9 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("hellwo")
         addItems()
     })
-    document.getElementById("btn-delete-all").addEventListener("click", ()=> {
+    document.getElementById("btn-delete-all").addEventListener("click", () => {
         deleteAll()
     })
+
 })
 
 async function getThings() {
@@ -58,14 +59,27 @@ async function addItems() {
 function getCurrentTime() {
     return Intl.DateTimeFormat("no-NO").format(Date.now())
 }
-async function deleteAll(){
+
+async function deleteAll() {
     await fetch('api/v1/items/deleteAll', {method: 'DELETE'}).then(alert("DELETED"))
 }
+
+/*async function deleteOneItem(itemNumber) {
+    await fetch("api/v1/items/deleteOneItem", {
+            method: 'DELETE',
+        headers: {'Content-Type': 'application/json'}
+        }
+    ).then(() => { <- not part of inital demo, but might fixed in the furture
+        alert(`item number ${itemNumber} deleted!`)
+        getThings()
+    })
+}*/
+
 function displayItems(items) {
     let out = ""
-    out = "<table class='table table-striped'><tr><th>Item Number</th><th>Name</th><th>No. of items</th><th>Description</th><th>Author</th>><th>Time created</th></tr>"
+    out = "<table class='table table-striped'><tr><th>Item Number</th><th>Name</th><th>No. of items</th><th>Description</th><th>Author</th><th>Time created</th><th>action</th></tr>"
     for (let i of items) {
-        out += "<tr><td>" +i.itemNumber+"</td><td>"+ i.nameOfItem+ "</td><td>" + i.numberOfItems + "</td><td>" + i.description + "</td><td>" +i.userCreated+"</td><td>"+ i.timeStamp + "</td>" +"<td>aa </td> </td>"+"</tr>"
+        out += "<tr><td>" + i.itemNumber + "</td><td>" + i.nameOfItem + "</td><td>" + i.numberOfItems + "</td><td>" + i.description + "</td><td>" + i.userCreated + "</td><td>" + i.timeStamp + "</td>" + `<td><input type='button' id=delete-${i.itemNumber} value='delete item' class='btn btn-danger' onclick='deleteOneItem(${i.itemNumber})'> </td> </td>` + "</tr>"
     }
     out += "</table>"
 
