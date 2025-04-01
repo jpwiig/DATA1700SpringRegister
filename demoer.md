@@ -10,6 +10,9 @@
 - vise fram til debugging verktøy (hoppscotch)
 - Gå sakte men sikkert gjennom hva som må bli gjort
 - logging hvis tiden lar oss gjøre det
+
+
+
 #### Eventuelt (Du kan gjøre dette selv)
 - sortere med bruk av java collections
 

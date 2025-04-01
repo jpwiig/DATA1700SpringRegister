@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 async function getThings() {
-displayItems()
+    await fetch("api/v1/items/getItems", {method: "GET"}).then(respons =>
+        //console.log(respons.json())
+        respons.json()
+    ).then(data => displayItems(data))
+    //displayItems()
 }
 
 let items;
@@ -28,6 +32,18 @@ async function addItems() {
         description: document.getElementById("description").value,
         userCreated: document.getElementById("owner").value
     }
+    await fetch("api/v1/items/addItems", {
+        method: "POST", headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            nameOfItem: items.nameOfItem,
+            numberOfItems: items.numberOfitems,
+            description: items.description,
+            userCreated: items.userCreated
+        })
+    }).then (res => console.log(res.json())).then(data => {
+        console.log(data)
+        getThings()
+    })
     console.log(items)
 
 }
@@ -37,7 +53,9 @@ function getCurrentTime() {
 }
 
 async function deleteAll() {
-
+await fetch("api/v1/items/deleteAll", {method: "DELETE"}).then(()=>{alert("ALT ER SLETTET!")
+getThings()
+})
 }
 
 /*async function deleteOneItem(itemNumber) {

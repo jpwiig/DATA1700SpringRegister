@@ -28,9 +28,9 @@ public class Item {
     public Item() { //DB needs this
     }
 
-    public void setItemNumber(int itemNumber) {
+   /* public void setItemNumber(int itemNumber) {
         this.itemNumber = itemNumber;
-    }
+    }*/
     private String timeNow(){
         LocalDateTime now = LocalDateTime.now();
         return now.toString();

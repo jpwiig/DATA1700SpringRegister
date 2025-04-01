@@ -13,7 +13,7 @@ import java.util.List;
 public class ItemController {
 
     //List with all the Items
-
+    List<Item> AllItems = new ArrayList<>();
 
     @GetMapping("/hello")
     public String helloItems() {
@@ -25,18 +25,22 @@ public class ItemController {
     public void loadItems() {
         Item item1 = new Item(1, "fishsauce",81, "sauce from fish","me");
         Item item2 = new Item(2, "Lighter fluid",33, "fluid for my favorit green lighter","me");
+       AllItems.add(item1);
+       AllItems.add(item2);
         System.out.println("All items added!");
     }
 
     //to display all the items
     @GetMapping("/getItems")
     public List<Item> AllItems() {
-    return;
+    return AllItems;
     }
     //add a new item
     @PostMapping("/addItems")
     public void addAnItem(@RequestBody Item item){
         System.out.println(item.nameOfItem);
+        item.setItemNumber(incrementing());
+        AllItems.add(item);
         //here we vill add the final thing
 
     }
@@ -44,7 +48,7 @@ public class ItemController {
     //to delete all Items
     @DeleteMapping("/deleteAll")
     public void deleteAll(){
-
+        AllItems.clear();
     }
     //this one will one be coded live
     @DeleteMapping("/deleteOneItem")
