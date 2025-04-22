@@ -1,0 +1,19 @@
+
+
+services:
+  db:
+    image: 'postgres:latest'
+    ports:
+      - '15432:5432'
+    env_file:
+      - db.env
+    volumes:
+      - ./seed/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - "8080:8080"
